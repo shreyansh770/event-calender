@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/addEvent.css">
+    <link rel="stylesheet" href="../css/addEvent.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="m-contain">
+        <div class="basic">
+            <div class="cln-icon">
+                <div class="icon">
+                    <img src="../public/calendar.png" alt="">
+                </div>
+                <div class="b-text">G-CALENDER</div>
+            </div>
+            <div class="tday-btn">
+                <button>Today</button>
+            </div>
+            <div class="mini-caln">
+                <div class="mini-nav-ym">
+
+                    <div class="mni-ym">
+                        <div class="m-todays-my"></div>
+                    </div>
+
+
+                    <div class="btn-div">
+                        <div class="m-back">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+
+                        <div class="m-ahead">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="mini-week-con"></div>
+                <div class="mini-days-con">
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                    <div class="mini-week">
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                        <div class="mini-week-date"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="faculty"></div>
+        </div>
+
+        <div class="container">
+
+            <div class="nav-yd">
+
+                <div class="back">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+
+                <div class="todays-my"></div>
+
+                <div class="ahead">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="type-select"></div>
+
+            </div>
+            <div class="week-container"></div>
+            <div class="event-container" style="display: none;">
+                <div class="pop-up">
+                    <div class="close-cont"><i class="fas fa-times"></i></div>
+                    <div class="title">
+                        ADD EVENT
+                    </div>
+                    <div class="event-title">
+                        <input type="text" id="add-title" placeholder="Add Title">
+                    </div>
+                    <div class="event-info">
+                        <div class="choose-faculty">
+                            <span>Choose Faculty :</span>
+                            <select name="" id="faculty">
+                                <option value="xyz" selected="selected">option1</option>
+                                <option value="abc">option2</option>
+                                <option value="pqr">option3</option>
+                            </select>
+                        </div>
+                        <div class="add-day">
+                            <div class="s-day">
+                                <span>Start Day :</span>
+                                <input type="date">
+                            </div>
+                            <div class="e-day">
+                                <span>End Day :</span>
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="add-time">
+                            <div class="s-time">
+                                <span>Start Time :</span>
+                                <input type="time">
+                            </div>
+                            <div class="e-time">
+                                <span>End Time :</span>
+                                <input type="time">
+                            </div>
+                        </div>
+                        <div id="day-box">
+                            <div class="day-cb">Day :</div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                S
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                M
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                T
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                W
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                T
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                F
+                            </div>
+                            <div class="add-day-event">
+                                <input type="checkbox">
+                                S
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="detail">
+                        Details :
+                        <textarea name="" id="deatail"></textarea>
+                        <button class="submit">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="days-container">
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+                <div class="week">
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                    <div class="week-date"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="addEvent">
+            <button class="add"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/logic.js"></script>
+    <script src="../js/monthly.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <script src="../js/mini-Logic.js"></script>
+    <script src="../js/mini-monthly.js"></script>
+    <script src="../js/mini-nav.js"></script>
+    <script src="../js/eventAdd.js"></script>
+    <script src="../js/addEvent.js"></script>
+
+
+
+</body>
+
+</html>

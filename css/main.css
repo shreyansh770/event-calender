@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+/* .cdate{
+    color: blue;
+} */
+
+.m-contain{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+
+
+.container{
+    height: 100%;
+    width: 55%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.addEvent{
+    height: 100%;
+    width: 20%;
+    border: 1px solid green;
+}
+
+.nav-yd{
+    width: 100%;
+    height: 14%;
+    text-align: center;
+    font-size: 3.2rem;
+    font-family: monospace;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.type-select{
+    width: 20%;
+    height: 4rem;
+    border: 1px solid red;
+}
+
+.week-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.week-days{
+    height: 66%;
+    width:5rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.days-container{
+    width: 100%;
+    height: 56%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.week{
+
+    width: 100%;
+    height: 25%;
+    display: flex;
+}
+.week-date{
+    width: 9.5rem;
+    height: 100%;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
