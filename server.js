@@ -1,6 +1,7 @@
 const express = require('express');
 const getEventRouter = require('./routers/getEventRouter');
 const eventRouter = require('./routers/eventRouter');
+const loginRouter = require('./routers/login');
 
 let app = express();
 
@@ -16,6 +17,7 @@ app.use(function(req, res, next) {
 
 app.use("/addEvent",eventRouter)
 app.use("/getEvent",getEventRouter)
+app.use("/auth",loginRouter)
 
 
 app.listen(3000,()=>{

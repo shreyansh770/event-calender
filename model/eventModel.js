@@ -46,11 +46,7 @@ const eventSchema = new mongoose.Schema({
  
 })
 
-// eventSchema.pre('save',async(next)=>{
-//    console.log(this);
-//    this.key =  this.event.evObj.sDay;
-//    next();
-// })
+
 
 const eventModel = mongoose.model("eventModel",eventSchema)
 

@@ -1,5 +1,4 @@
 const express = require('express');
-const { type } = require('express/lib/response');
 let eventModel = require("../model/eventModel")
 const getEventRouter = express.Router();
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
