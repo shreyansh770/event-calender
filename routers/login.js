@@ -9,6 +9,7 @@ const loginRouter = express.Router();
 
 loginRouter.route("/signup").post(signUpUser)
 loginRouter.route("/login").get(signInUser)
+loginRouter.route("/logout").get(signOutUser)
 
 async function signUpUser(req, res) {
 
@@ -71,6 +72,30 @@ async function signInUser(req, res) {
 
 }
 
+
+
+function signOutUser(req,res){
+
+    try {
+
+        if(req.cookies.login){
+
+
+            res.clearCookie('login');
+            res.send("user logged out")
+
+
+        }else{
+            res.send("plz login")
+        }
+        
+        
+    } catch (error) {
+        res.status(500).send({
+            error: error.message
+        })
+    }
+}
 
 
 module.exports = loginRouter
