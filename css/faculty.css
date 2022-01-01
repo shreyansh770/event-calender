@@ -50,7 +50,7 @@
 
 
 
-.add-day{
+.f-add-day{
     width: 100%;
     height: 37.5%;
     display: flex;
@@ -101,7 +101,7 @@
 }
 
 
-.add-time{
+.f-add-time{
     width: 100%;
     height: 37.5%;
     display: flex;

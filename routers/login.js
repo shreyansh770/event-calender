@@ -16,8 +16,11 @@ async function signUpUser(req, res) {
 
     try {
 
+        
         let userObj = req.body;
         let user = await facultyModel.create(userObj);
+        console.log(user);
+
         res.json({
             message: "User sign-up plz login",
             user: user
@@ -37,11 +40,12 @@ async function signInUser(req, res) {
 
     try {
 
-        let userObj = req.body;
+        let userObj = req.query;
+        console.log(userObj);
         let user = await facultyModel.findOne({
             email: userObj.email
         })
-
+        
         if (user.password === userObj.password) {
 
             // creating JWT token for the user
@@ -53,14 +57,19 @@ async function signInUser(req, res) {
 
             // login cookie
             res.cookie('login', token, {
-                httpOnly: true
+                httpOnly: true,
             })
 
             res.json({
-                message:"User logged in"
+                message:"User logged in",
+                user:user
             })
 
 
+        }else{
+            res.json({
+                message:"Password or email wrong"
+            })
         }
 
     } catch (error) {

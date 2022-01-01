@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/addEvent.css">
     <link rel="stylesheet" href="../css/addEvent.css">
+    <link rel="stylesheet" href="../css/faculty.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,6 +127,10 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
             </div>
         </div>
 
@@ -147,6 +152,7 @@
 
             </div>
             <div class="week-container"></div>
+
             <div class="event-container" style="display: none;">
                 <div class="pop-up">
                     <div class="close-cont"><i class="fas fa-times"></i></div>
@@ -225,6 +231,54 @@
                     </div>
                 </div>
             </div>
+
+            <div class="faculty-container" style="display: none;">
+                <div class="f-pop-up">
+                    <div class="f-close-cont"><i class="fas fa-times"></i></div>
+                    <div class="f-title">
+                        ADD FACULTY
+                    </div>
+                    <div class="f-faculty-info">
+                        <div class="f-add-day">
+                            <div class="f-name">
+                                <span>Faculty Name :</span>
+                                <input type="text">
+                            </div>
+                            <div class="f-email">
+                                <span>Faculty Email :</span>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="f-add-time">
+                            <div class="f-phn">
+                                <span>Phone No:</span>
+                                <input type="number">
+                            </div>
+                            <div class="f-pass">
+                                <span>Password :</span>
+                                <input type="password">
+                            </div>
+                        </div>
+
+                        <div class="f-add-time">
+                            <div class="f-phn">
+                                <span>Confirm Password:</span>
+                                <input type="password">
+                            </div>
+                            <div class="f-pass">
+                                <span>Role :</span>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="add-faculty-sbtn">
+                            <button class="submit">SUBMIT</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
             <div class="days-container">
                 <div class="week">
                     <div class="week-date"></div>
@@ -290,7 +344,9 @@
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/util.js"></script>
     <script src="../js/logic.js"></script>
     <script src="../js/monthly.js"></script>
@@ -301,6 +357,7 @@
     <script src="../js/mini-nav.js"></script>
     <script src="../js/eventAdd.js"></script>
     <script src="../js/addEvent.js"></script>
+    <script src="../faculty/addFacultyFun.js"></script>
 
 
 
