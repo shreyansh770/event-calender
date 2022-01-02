@@ -1,5 +1,3 @@
-
-
 let loginObj = {
     email:"",
     password:""
@@ -22,15 +20,12 @@ lgpass.addEventListener("blur",(e)=>{
 
 
 lgbtn.addEventListener("click",async()=>{
-    let lres = await axios.get('http://localhost:3000/auth/login',{
-        params:{
-            email : loginObj.email,
-            password : loginObj.password
-        },
-    })
+
+    let lres = await axios.post('http://localhost:3000/auth/login',  loginObj)
 
     if(lres.data.user){
-        window.location.href = '/view/main.html'
+        localStorage.setItem('login',lres.data.token)
+        window.location.href = `/view/main.html`   
     }
-    console.log(lres);
+    
 })

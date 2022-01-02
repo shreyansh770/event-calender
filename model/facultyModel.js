@@ -45,6 +45,10 @@ const facultySchema = new mongoose.Schema({
         type:String,
         enum:["Admin","teacher"],
         default:"teacher"
+    },
+
+    token:{
+        type:String
     }
 
 
