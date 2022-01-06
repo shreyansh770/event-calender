@@ -12,15 +12,19 @@ module.exports.protectRoute =
 
         try {
 
-            if (req.cookies.login) {
+            console.log(req);
 
-                let isVerfied = jwt.verify(req.cookies.login, JWT_KEY)
-
+            let cookieToken = req.body.token
+           
+            if (cookieToken) {
+                
+                let isVerfied = jwt.verify(cookieToken, JWT_KEY)
+                console.log(isVerfied);
                 if (isVerfied) {
                     req.userId = isVerfied.id;
                     next()
                 } else {
-                    return res.json({
+                    res.json({
                         message: "Not Authorized"
                     })
                 }
@@ -47,14 +51,17 @@ module.exports.isAuth =
             let {
                 userId
             } = req
-            try {
 
-                let user = await facultyModel.findById(userId);
-                console.log(user);
+            
+            try {
+                
+
+                let user = await facultyModel.find({email:userId});
+                
 
                 if (user) {
 
-                    let isUserAuth = roles.includes(user.role)
+                    let isUserAuth = roles.includes(user[0].role)
                     if (isUserAuth) {
                         console.log("user is authorized");
                         next()

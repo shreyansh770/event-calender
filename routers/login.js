@@ -11,6 +11,7 @@ loginRouter.route("/signup").post(signUpUser)
 loginRouter.route("/login").post(signInUser)
 loginRouter.route("/logout").get(signOutUser)
 loginRouter.route("/getUser").get(getUser)
+loginRouter.route("/getFac").get(getAllUser)
 
 async function signUpUser(req, res) {
 
@@ -37,35 +38,31 @@ async function signInUser(req, res) {
 
         let userObj = req.body;
 
+        
         let user = await facultyModel.findOne({
             email: userObj.email
         })
+        
+        
 
         if (user.password === userObj.password) {
 
             // creating JWT token for the user
             let payload = user.email;
-
-            let token = jwt.sign({
+            const token = jwt.sign({
                 id: payload
             }, JWT_KEY)
 
-            // login cookie
-            res.cookie('login', token, {
-                httpOnly: true,
-            })
 
-            let updatedUser = await facultyModel.findOneAndUpdate({
-                email: user.email
-            }, {
-                token: token
-            }, {
-                returnDocument: true
-            })
+            // login cookie
+            res.cookie('login', token,{ httpOnly: true })
+
+            console.log(req.cookies);
+            
             res.json({
                 message: "User logged in",
-                user: updatedUser,
-                token: token
+                user: user,
+                token : token
             })
 
 
@@ -110,9 +107,10 @@ function signOutUser(req, res) {
 async function getUser(req, res) {
     try {
 
-        let token_id = req.query.cookieToken;
+        let email_id = req.query.email;
+        
         let user = await facultyModel.find({
-            token: token_id
+            email: email_id
         })
 
         res.send({
@@ -127,6 +125,22 @@ async function getUser(req, res) {
 }
 
 
+async function getAllUser(req,res){
+    try {
+
+        let users = await facultyModel.find();
+
+        res.json({
+            message:"All Users",
+            users : users
+        })
+        
+    } catch (error) {
+        res.status(500).send({
+            error: error.message
+        })
+    }
+}
 
 
 module.exports = loginRouter
