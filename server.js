@@ -5,6 +5,7 @@ const getEventRouter = require('./routers/getEventRouter');
 const eventRouter = require('./routers/eventRouter');
 const loginRouter = require('./routers/login');
 const addFacultyRouter = require('./routers/addFaulty');
+const delFacultyRouter = require('./routers/delFaculty');
 
 
 let app = express();
@@ -18,7 +19,7 @@ app.use("/addEvent", eventRouter)
 app.use("/getEvent", getEventRouter)
 app.use("/auth", loginRouter)
 app.use("/addfaculty", addFacultyRouter)
-app.use("/delFac",addFacultyRouter)
+app.use("/delFac",delFacultyRouter)
 
 
 app.listen(3000, () => {

@@ -1,12 +1,16 @@
-document.body.addEventListener('click', async (e) => {
+let cont = document.querySelector('.faculty-list')
 
-    if (e.target.class = 'dele-fac') {
+let userToDel = {
 
-        let userToDel ={
-            email : "",
-            token :"",
-            delEmail :""
-        }
+    delEmail: "",
+    email: "",
+    token:""
+}
+
+cont.addEventListener('click', async (e) => {
+
+
+    if (e.target.classList.contains('fa-trash')) {
 
         let delBtn = document.querySelector('.dele-fac')
 
@@ -19,9 +23,12 @@ document.body.addEventListener('click', async (e) => {
             userToDel.delEmail = facvalue;
             userToDel.email = facDet.email;
             userToDel.token = facDet.token
+
             
-             
-            let delUser = await axios.delete('http://localhost:3000/delFac',userToDel)
+            let delUser = await axios.post('http://localhost:3000/delFac',userToDel)
+
+            console.log(delUser);
+
         } else {
             console.log("User not logged In");
         }

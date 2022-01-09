@@ -44,11 +44,11 @@ addFacultyBtn.addEventListener("click", async () => {
             fCont.style.display = "block"
             
         } else {
-            alert('Only allowed for admins')
+            msg('Only allowed for admins')
         }
 
     } else {
-        console.log("You are not logged in")
+        msg('You are not logged in')
     }
 
 

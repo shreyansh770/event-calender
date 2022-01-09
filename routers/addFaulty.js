@@ -6,7 +6,7 @@ const addFacultyRouter = express.Router();
 
 addFacultyRouter.route("/").post(protectRoute,isAuth(["Admin"]),facultyAdd)
 
-addFacultyRouter.route("/").delete(protectRoute,isAuth(["Admin"]),deleteFac)
+
 
 async function facultyAdd(req,res){
 
@@ -33,17 +33,6 @@ async function facultyAdd(req,res){
 }
 
 
-async function deleteFac(req,res){
-    try {
 
-    
-     
-        
-      
-
-    } catch (error) {
-        
-    }
-}
 
 module.exports = addFacultyRouter

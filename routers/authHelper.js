@@ -12,12 +12,12 @@ module.exports.protectRoute =
 
         try {
 
-            console.log(req);
-
+            console.log(req.body);
+            console.log("protect route");
             let cookieToken = req.body.token
-           
+
             if (cookieToken) {
-                
+
                 let isVerfied = jwt.verify(cookieToken, JWT_KEY)
                 console.log(isVerfied);
                 if (isVerfied) {
@@ -52,12 +52,14 @@ module.exports.isAuth =
                 userId
             } = req
 
-            
-            try {
-                
 
-                let user = await facultyModel.find({email:userId});
-                
+            try {
+
+
+                let user = await facultyModel.find({
+                    email: userId
+                });
+
 
                 if (user) {
 
@@ -65,7 +67,7 @@ module.exports.isAuth =
                     if (isUserAuth) {
                         console.log("user is authorized");
                         next()
-                    }else{
+                    } else {
                         res.send("user not authorized->")
                     }
 
@@ -78,9 +80,58 @@ module.exports.isAuth =
 
 
             } catch (error) {
-
+                console.log("userTodelEmail");
                 res.status(500).json({
-                    messsage : error.message
+                    messsage: error.message
+                })
+            }
+
+        }
+    }
+
+
+
+
+module.exports.isAuthToDel =
+    function isAuthToDel(roles) {
+
+        return async function (req, res, next) {
+
+            let {
+                userId
+            } = req
+
+
+            try {
+
+
+                let user = await facultyModel.find({
+                    email: userId
+                });
+
+
+                if (user) {
+
+                    let isUserAuth = roles.includes(user[0].role)
+                    if (isUserAuth) {
+                        console.log("user is authorized to del");
+                        next()
+                    } else {
+                        res.send("user not authorized-> to del")
+                    }
+
+                } else {
+
+                    res.json({
+                        message: "User not found "
+                    })
+                }
+
+
+            } catch (error) {
+                
+                res.status(500).json({
+                    messsage: error.message
                 })
             }
 
