@@ -30,7 +30,12 @@ sBtn.addEventListener("click",async ()=>{
 })
 
 aBtn.addEventListener("click",()=>{
-    ePup.style.display = "block"
+    if(localStorage.getItem('login')){
+        ePup.style.display = "block"
+    }else{
+        msg('Faculty not logged in')
+    }
+    
 })
 
 xBtn.addEventListener("click",()=>{
