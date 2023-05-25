@@ -89,7 +89,16 @@ addFBtn.addEventListener('click', async () => {
     facObj.token = user_Token.token
 
     let adminUser = await axios.post('http://localhost:3000/addfaculty', facObj)
-
-    // console.log(adminUser);
+    if(adminUser.data.message==="faculty added"){
+        fCont.style.display="none"
+        setTimeout(()=>{
+            msg("faculty added")
+        },2000)
+    }else{
+        fCont.style.display="none"
+        setTimeout(()=>{
+            msg("faculty cannot be added")
+        },2000)
+    }
  
 })

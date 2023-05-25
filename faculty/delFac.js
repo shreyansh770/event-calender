@@ -13,7 +13,7 @@ cont.addEventListener('click', async (e) => {
     if (e.target.classList.contains('fa-trash')) {
 
         let delBtn = document.querySelector('.dele-fac')
-
+        
         if (localStorage.getItem('login')) {
 
             let facvalue = delBtn.getAttribute('datavalue')
@@ -27,10 +27,10 @@ cont.addEventListener('click', async (e) => {
             
             let delUser = await axios.post('http://localhost:3000/delFac',userToDel)
 
-            console.log(delUser);
-
+            msg(delUser.data.message);
+    
         } else {
-            console.log("User not logged In");
+            msg("User not logged In");
         }
     }
 

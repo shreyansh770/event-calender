@@ -12,12 +12,10 @@ async function facultyAdd(req,res){
 
     try {
         
-
         let facBdy = req.body
         facBdy.token = undefined
        
         let newFaculty = await facultyModel.create(facBdy)
-        
         res.json({
             message : "faculty added",
             newFaculty
